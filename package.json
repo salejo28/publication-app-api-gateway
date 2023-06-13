@@ -20,10 +20,10 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "proto:install": "npm i git+https://github.com/salejo28/nest-publicationapp-proto.git",
-    "proto:auth": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=./node_modules/nest-publicationapp-proto/proto --ts_proto_out=src/auth/ node_modules/nest-publicationapp-proto/proto/auth.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
-    "proto:user": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=./node_modules/nest-publicationapp-proto/proto --ts_proto_out=src/auth/ node_modules/nest-publicationapp-proto/proto/user.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
-    "proto:publication": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=./node_modules/nest-publicationapp-proto/proto --ts_proto_out=src/auth/ node_modules/nest-publicationapp-proto/proto/publication.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
-    "proto:comment": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=./node_modules/nest-publicationapp-proto/proto --ts_proto_out=src/auth/ node_modules/nest-publicationapp-proto/proto/comment.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
+    "proto:auth": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=./node_modules/proto/proto --ts_proto_out=src/auth/ node_modules/proto/proto/auth.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
+    "proto:user": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=./node_modules/proto/proto --ts_proto_out=src/user/ node_modules/proto/proto/user.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
+    "proto:publication": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=./node_modules/proto/proto --ts_proto_out=src/publication/ node_modules/proto/proto/publication.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
+    "proto:comment": "protoc --plugin=node_modules/.bin/protoc-gen-ts_proto -I=./node_modules/proto/proto --ts_proto_out=src/comment/ node_modules/proto/proto/comment.proto --ts_proto_opt=nestJs=true --ts_proto_opt=fileSuffix=.pb",
     "proto:all": "npm run proto:auth && npm run proto:user && npm run proto:publication && npm run proto:comment"
   },
   "dependencies": {
@@ -33,6 +33,7 @@
     "@nestjs/core": "^9.0.0",
     "@nestjs/microservices": "^9.4.2",
     "@nestjs/platform-express": "^9.0.0",
+    "proto": "github:salejo28/nest-publicationapp-proto",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
